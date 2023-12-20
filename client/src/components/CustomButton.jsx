@@ -1,6 +1,7 @@
 import { useSnapshot } from "valtio";
 import state from "../store";
 import { getContrastingColor } from "../config/helpers";
+import PropTypes from "prop-types";
 
 const CustomButton = ({ type, title, customStyles, handleClick }) => {
   const snap = useSnapshot(state);
@@ -27,6 +28,13 @@ const CustomButton = ({ type, title, customStyles, handleClick }) => {
       {title}
     </button>
   );
+};
+
+CustomButton.propTypes = {
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  customStyles: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default CustomButton;

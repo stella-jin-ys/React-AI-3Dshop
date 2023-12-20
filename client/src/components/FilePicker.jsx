@@ -1,4 +1,5 @@
 import CustomButton from "./CustomButton";
+import PropTypes from "prop-types";
 
 const FilePicker = ({ file, setFile, readFile }) => {
   return (
@@ -34,6 +35,12 @@ const FilePicker = ({ file, setFile, readFile }) => {
       </div>
     </div>
   );
+};
+
+FilePicker.propTypes = {
+  file: PropTypes.string.isRequired,
+  setFile: PropTypes.func.isRequired,
+  readFile: PropTypes.func.isRequired,
 };
 
 export default FilePicker;
